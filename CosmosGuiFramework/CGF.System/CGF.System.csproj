@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9868B455-E36F-401D-BD04-996EB62301B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CGF.System</RootNamespace>
+    <AssemblyName>CGF.System</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cosmos.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\AppData\Roaming\Cosmos User Kit\Build\IL2CPU\Cosmos.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Cosmos.HAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\AppData\Roaming\Cosmos User Kit\Build\IL2CPU\Cosmos.HAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Cosmos.IL2CPU.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=309e74c26df3ae7f, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\AppData\Roaming\Cosmos User Kit\Build\IL2CPU\Cosmos.IL2CPU.Plugs.dll</HintPath>
+    </Reference>
+    <Reference Include="Cosmos.System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\AppData\Roaming\Cosmos User Kit\Kernel\Cosmos.System.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics.Vectors, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\SharpFont-master\SharpFont-master\external\System.Numerics.Vectors\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Color.cs" />
+    <Compile Include="Colors.cs" />
+    <Compile Include="Desktop.cs" />
+    <Compile Include="Font.cs" />
+    <Compile Include="Graphics.cs" />
+    <Compile Include="Internals\SharpFont\FontCollection.cs" />
+    <Compile Include="Internals\SharpFont\FontFace.cs" />
+    <Compile Include="Internals\SharpFont\Internal\BinPacker.cs" />
+    <Compile Include="Internals\SharpFont\Internal\CharacterMap.cs" />
+    <Compile Include="Internals\SharpFont\Internal\DataReader.cs" />
+    <Compile Include="Internals\SharpFont\Internal\Geometry.cs" />
+    <Compile Include="Internals\SharpFont\Internal\Interpreter.cs" />
+    <Compile Include="Internals\SharpFont\Internal\KerningTable.cs" />
+    <Compile Include="Internals\SharpFont\Internal\Renderer.cs" />
+    <Compile Include="Internals\SharpFont\Internal\SbitTable.cs" />
+    <Compile Include="Internals\SharpFont\Internal\SfntTables.cs" />
+    <Compile Include="Internals\SharpFont\InvalidFontException.cs" />
+    <Compile Include="Internals\SharpFont\Metrics.cs" />
+    <Compile Include="Internals\SharpFont\TextAnalyzer.cs" />
+    <Compile Include="Internals\SharpFont\TextFormat.cs" />
+    <Compile Include="Internals\SharpFont\TextLayout.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CGF.Hal\CGF.Hal.csproj">
+      <Project>{8cd77718-e5dc-497b-b2a5-d23964ab7c97}</Project>
+      <Name>CGF.Hal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CGF.System.Plugs\CGF.System.Plugs.csproj">
+      <Project>{0494e4bd-18b8-49ae-97cd-a243f1d93eb5}</Project>
+      <Name>CGF.System.Plugs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
