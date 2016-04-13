@@ -10,6 +10,7 @@ namespace CGF.System
     {
         public static Color Red { get; set; } = new Color(255, 0, 0);
         public static Color Black { get; set; } = new Color();
+        public static Color White { get; set; } = new Color(255,255,255);
 
         public static Color FromName(string name)
         {

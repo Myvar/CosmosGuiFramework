@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{CBD1D906
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontConverter", "FontConverter\FontConverter.csproj", "{DA38EAC9-36B8-46AF-9221-8A4763CB4347}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageConverter", "ImageConverter\ImageConverter.csproj", "{762EFBE8-B600-4A34-A734-04CC565D02C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,11 +85,20 @@ Global
 		{DA38EAC9-36B8-46AF-9221-8A4763CB4347}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DA38EAC9-36B8-46AF-9221-8A4763CB4347}.Release|x86.ActiveCfg = Release|Any CPU
 		{DA38EAC9-36B8-46AF-9221-8A4763CB4347}.Release|x86.Build.0 = Release|Any CPU
+		{762EFBE8-B600-4A34-A734-04CC565D02C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762EFBE8-B600-4A34-A734-04CC565D02C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762EFBE8-B600-4A34-A734-04CC565D02C8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{762EFBE8-B600-4A34-A734-04CC565D02C8}.Debug|x86.Build.0 = Debug|Any CPU
+		{762EFBE8-B600-4A34-A734-04CC565D02C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762EFBE8-B600-4A34-A734-04CC565D02C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{762EFBE8-B600-4A34-A734-04CC565D02C8}.Release|x86.ActiveCfg = Release|Any CPU
+		{762EFBE8-B600-4A34-A734-04CC565D02C8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DA38EAC9-36B8-46AF-9221-8A4763CB4347} = {CBD1D906-203A-494F-A0D6-EFDFF0CC1650}
+		{762EFBE8-B600-4A34-A734-04CC565D02C8} = {CBD1D906-203A-494F-A0D6-EFDFF0CC1650}
 	EndGlobalSection
 EndGlobal

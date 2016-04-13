@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CGF.System.Internals
 {
-    public  class CFFStream
+    public class RWStream
     {
         public List<byte> _buffer = new List<byte>();
         public int _index = -1;
 
-        public CFFStream(byte[] raw)
+        public RWStream(byte[] raw)
         {
             for (int i = 0; i < raw.Length; i++)
             {
@@ -21,7 +21,7 @@ namespace CGF.System.Internals
             
         }
 
-        public CFFStream(byte[] raw, int offset)
+        public RWStream(byte[] raw, int offset)
         {
             for (int i = 0; i < raw.Length; i++)
             {
@@ -30,7 +30,7 @@ namespace CGF.System.Internals
             _index = offset - 1;
         }
 
-        public CFFStream()
+        public RWStream()
         {
 
         }
@@ -80,21 +80,21 @@ namespace CGF.System.Internals
 
         public void WriteInt32(int value)
         {
-            _index++;
-            _buffer[_index] = ((byte)((value & 0xFF000000) >> 24));
-            _index++;
-            _buffer[_index] = ((byte)((value & 0xFF0000) >> 16));
-            _index++;
-            _buffer[_index] = ((byte)((value & 0xFF00) >> 8));
-            _index++;
-            _buffer[_index] = ((byte)(value & 0xFF));
+
+            _buffer.Add((byte)((value & 0xFF000000) >> 24));
+
+            _buffer.Add((byte)((value & 0xFF0000) >> 16));
+
+            _buffer.Add((byte)((value & 0xFF00) >> 8));
+
+            _buffer.Add((byte)(value & 0xFF));
 
         }
 
         public void WriteByte(byte b)
         {
             _index++;
-            _buffer[_index] = b;
+            _buffer.Add(b);
         }
 
         public byte ReadByte()

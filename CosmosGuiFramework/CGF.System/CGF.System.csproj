@@ -63,12 +63,17 @@
   <ItemGroup>
     <Compile Include="Color.cs" />
     <Compile Include="Colors.cs" />
+    <Compile Include="Cursor.cs" />
     <Compile Include="Desktop.cs" />
     <Compile Include="Drivers\VBEScreen.cs" />
     <Compile Include="Font.cs" />
     <Compile Include="Graphics.cs" />
-    <Compile Include="Internals\CFFStream.cs" />
+    <Compile Include="Imaging\Decoders\CIFDecoder.cs" />
+    <Compile Include="Imaging\IImageDecode.cs" />
+    <Compile Include="Imaging\Image.cs" />
     <Compile Include="Internals\Files\Fonts.cs" />
+    <Compile Include="Internals\Files\Cursors.cs" />
+    <Compile Include="Internals\RWStream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screen.cs" />
   </ItemGroup>

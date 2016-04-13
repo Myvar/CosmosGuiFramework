@@ -11,7 +11,7 @@ namespace CGF.System
 {
     public class Font
     {
-        private CFFStream RawFile = new CFFStream();
+        private RWStream RawFile = new RWStream();
 
         // header:
         //magic number: CFF - Custom Font File
@@ -45,7 +45,7 @@ namespace CGF.System
 
         public Font(byte[] File)
         {
-            RawFile = new CFFStream(File);
+            RawFile = new RWStream(File);
             DeserlizeFile();
         }
 

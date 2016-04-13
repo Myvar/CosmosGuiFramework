@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CGF.System.Imaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -97,7 +98,6 @@ namespace CGF.System
             return width;
         }
 
-
         public static void DrawString(string c, int x, int y, Color color, Font f)
         {
             int totalwidth = 0;
@@ -118,6 +118,30 @@ namespace CGF.System
                     totalwidth += DrawChar(ch, totalwidth, y, color, f);
                 }
 
+            }
+        }
+
+        public static void DrawImage(Image img, int x, int y, Color TransparencyKey = null)
+        {
+            int z = 0;
+            for (int p = y; p < y + img.Height; p++)
+            {
+                for (int i = x; i < x + img.Width; i++)
+                {
+                    if (TransparencyKey != null)
+                    {
+                        if(img.Map[z] != TransparencyKey.ToHex())
+                        {
+                            Screen.SetPixel(i, p, img.Map[z]);
+                        }
+                    }
+                    else
+                    {
+                        Screen.SetPixel(i, p, img.Map[z]);
+                    }
+
+                    z++;
+                }
             }
         }
     }

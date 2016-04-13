@@ -1,4 +1,5 @@
-﻿using Cosmos.HAL;
+﻿using CGF.System.Imaging;
+using Cosmos.HAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,13 @@ namespace CGF.System
         public void Init()
         {
             //init screen and doublebuffer
-
             Screen.Init();
+            //always init mouse agfter screen
+            Cursor.Init();
+            Cursor.Enabled = true;
             Screen.Clear(BackGroundColor, true);
             deltaT = RTC.Second;
+            Cursor.Image = Image.Load(Internals.Files.Cursors.Normal);
         }
 
         int c = 0;
@@ -28,6 +32,8 @@ namespace CGF.System
         {
             //alwas clear first
             Screen.Clear(BackGroundColor);
+
+           
 
 
             if (deltaT != RTC.Second)
@@ -40,13 +46,15 @@ namespace CGF.System
                
             }
 
-            Graphics.DrawString("FPS: " + FPS.ToString(), 10, 10, Colors.Black, CGF.System.Internals.Files.Fonts.Consolas14_cff);
+            Graphics.DrawString("FPS: " + FPS, 10, 10, Colors.Black, CGF.System.Internals.Files.Fonts.Consolas14_cff);
 
             Graphics.DrawLine(50, 50, 100, 70 + 50, Colors.Black);
 
             Graphics.DrawRectangle(50, 50, 50, 50, Colors.Black);
 
-            
+
+            //mouse must alwasy be ontop
+            Cursor.Render();
 
             //always redraw last
             Screen.Redraw();
