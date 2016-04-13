@@ -115,7 +115,7 @@ namespace CGF.System
                 }
                 else
                 {
-                    totalwidth += DrawChar(ch, totalwidth, y, color, f);
+                    totalwidth += DrawChar(ch, x + totalwidth, y, color, f);
                 }
 
             }
