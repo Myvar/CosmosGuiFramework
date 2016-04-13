@@ -64,24 +64,11 @@
     <Compile Include="Color.cs" />
     <Compile Include="Colors.cs" />
     <Compile Include="Desktop.cs" />
+    <Compile Include="Drivers\VBEScreen.cs" />
     <Compile Include="Font.cs" />
     <Compile Include="Graphics.cs" />
-    <Compile Include="Internals\SharpFont\FontCollection.cs" />
-    <Compile Include="Internals\SharpFont\FontFace.cs" />
-    <Compile Include="Internals\SharpFont\Internal\BinPacker.cs" />
-    <Compile Include="Internals\SharpFont\Internal\CharacterMap.cs" />
-    <Compile Include="Internals\SharpFont\Internal\DataReader.cs" />
-    <Compile Include="Internals\SharpFont\Internal\Geometry.cs" />
-    <Compile Include="Internals\SharpFont\Internal\Interpreter.cs" />
-    <Compile Include="Internals\SharpFont\Internal\KerningTable.cs" />
-    <Compile Include="Internals\SharpFont\Internal\Renderer.cs" />
-    <Compile Include="Internals\SharpFont\Internal\SbitTable.cs" />
-    <Compile Include="Internals\SharpFont\Internal\SfntTables.cs" />
-    <Compile Include="Internals\SharpFont\InvalidFontException.cs" />
-    <Compile Include="Internals\SharpFont\Metrics.cs" />
-    <Compile Include="Internals\SharpFont\TextAnalyzer.cs" />
-    <Compile Include="Internals\SharpFont\TextFormat.cs" />
-    <Compile Include="Internals\SharpFont\TextLayout.cs" />
+    <Compile Include="Internals\CFFStream.cs" />
+    <Compile Include="Internals\Files\Fonts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screen.cs" />
   </ItemGroup>

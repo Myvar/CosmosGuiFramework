@@ -8,7 +8,7 @@ namespace CGF.System
 {
     public class Graphics
     {
-        public static void Line(int x, int y, int x2, int y2, Color color)
+        public static void DrawLine(int x, int y, int x2, int y2, Color color)
         {
             int w = x2 - x;
             int h = y2 - y;
@@ -44,24 +44,80 @@ namespace CGF.System
             }
         }
 
-        public static void Rectangle(int x, int y, int w, int h, Color color)
+        public static void DrawRectangle(int x, int y, int w, int h, Color color)
         {
-            Line(x, y, x, y + h, color);
-            Line(x, y, x + w, y, color);
-            Line(x, y + h, x + w, y + h, color);
-            Line(x + w, y, x + w, y + h, color);
-        }     
+            DrawLine(x, y, x, y + h, color);
+            DrawLine(x, y, x + w, y, color);
+            DrawLine(x, y + h, x + w, y + h, color);
+            DrawLine(x + w, y, x + w, y + h, color);
+        }
+        
 
-        public static void RectangleFill(int x, int y, int w, int h, Color color)
+        public static void FillRectangle(int x, int y, int w, int h, Color color)
         {
-            Line(x, y, x, y + h, color);
-            Line(x, y, x + w, y, color);
-            Line(x, y + h, x + w, y + h, color);
-            Line(x + w, y, x + w, y + h, color);
+            DrawLine(x, y, x, y + h, color);
+            DrawLine(x, y, x + w, y, color);
+            DrawLine(x, y + h, x + w, y + h, color);
+            DrawLine(x + w, y, x + w, y + h, color);
 
             for (int i = 0; i < h; i++)
             {
-                Line(x, y + i, x + w, y + i, color);
+                DrawLine(x, y + i, x + w, y + i, color);
+            }
+        }
+
+        public static int DrawChar(char c, int x, int y, Color color, Font f)
+        {
+            var index = 0;
+            for (int i = 0; i < f.Char.Count; i++)
+            {
+                if(c == f.Char[i])
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            var width = f.Width[index];
+
+            int z = 0;
+            for (int p = y; p < y + f.Height[index]; p++)
+            {
+                for (int i = x; i < x + width; i++)
+                {
+                    if (f.Data[index][z] == 1)
+                    {
+                        Screen.SetPixel(i, p, color);
+                    }
+
+                    z++;
+                }
+            }
+
+            return width;
+        }
+
+
+        public static void DrawString(string c, int x, int y, Color color, Font f)
+        {
+            int totalwidth = 0;
+            for (int i = 0; i < c.Length; i++)
+            {
+                
+                var ch = c[i];
+                if (ch == ' ')
+                {
+                    totalwidth += f.Width[0];
+                }
+                else if (ch == '\t')
+                {
+                    totalwidth += (f.Width[0] * 4);
+                }
+                else
+                {
+                    totalwidth += DrawChar(ch, totalwidth, y, color, f);
+                }
+
             }
         }
     }

@@ -15,14 +15,12 @@ namespace TestKernal
         protected override void BeforeRun()
         {
             Console.Clear();
-            var f = new Font(TestFiles.PlayRegular_ttf);
-
-            //d.Init();
+             d.Init();
         }
 
         protected override void Run()
         {
-           // d.ReDraw();
+            d.ReDraw();
         }
     }
 }
