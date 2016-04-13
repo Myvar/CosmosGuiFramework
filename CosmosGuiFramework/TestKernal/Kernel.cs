@@ -7,20 +7,16 @@ using Sys = Cosmos.System;
 namespace TestKernal
 {
     public class Kernel : Sys.Kernel
-    {
-        private Desktop d = new Desktop();
-
-
-
+    {     
         protected override void BeforeRun()
         {
             Console.Clear();
-             d.Init();
+            ScreenManager.Step();
         }
 
         protected override void Run()
         {
-            d.ReDraw();
+            ScreenManager.Init();
         }
     }
 }

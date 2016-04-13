@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CGF.System
 {
-    public class Desktop
+    public class Desktop : IScreen
     {
         public Color BackGroundColor = new Color(0xC0FFEE);//hex 
 
@@ -62,5 +62,9 @@ namespace CGF.System
             Frames++;
         }
 
+        public void Handle()
+        {
+            ReDraw();
+        }
     }
 }
